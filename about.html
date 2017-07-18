@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
     <link href="styles/style.css" type="text/css" rel="stylesheet" />
      <link rel="stylesheet" href="assets/js/lightbox/css/lightbox.css">
+          <link href="assets/ImageViewer-master/imageviewer.css"  rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -68,10 +69,7 @@
 
 
         <section class="menu_bar">
-            <div class="titleBar">
-
-                <h2>Menu</h2>
-            </div>
+            
             <div class="container">
                 <div class="row removeMargin">
                     <a href="index.html">
@@ -95,7 +93,7 @@
                     <a href="activity.html">
                         <div class="col s12 menu_item">กิจกรรม</div>
                     </a>
-                    <a href="่join.html">
+                   <a href="join.html">
                         <div class="col s12 menu_item">ร่วมเป็นส่วนหนึ่งของเรา</div>
                     </a>
                     <a href="contact.html">
@@ -196,9 +194,9 @@
     <section>
        
             <ul class="imgList removeMargin">
-         <a  class="zoom" href="assets/img/map_big.jpg" data-lightbox="image-1" data-title="Map"><li class="imgItemBanner removeMargin" style="background-image:url('assets/img/map.jpg'); height: 550px;">
+       <li class="imgItemBanner removeMargin map-image" style="background-image:url('assets/img/map.jpg'); height: 550px;">
             <div class="imgBox"></div>
-        </li></a>
+        </li>
     </ul>
 
       
@@ -292,8 +290,19 @@ Website : www.capitalplaza.co.th</pre>
     </script>
     <script src="assets/js/myScript.js"></script>
     <script src="materialize/js/materialize.js"></script>
+       <script src="assets/ImageViewer-master/imageviewer.js"></script>
   <script type="text/javascript" src="assets/js/lightbox/js/lightbox.js"></script>
-  
+   <script>
+          $(function () {
+    var viewer = ImageViewer();
+    $('.map-image').click(function () {
+        var imgSrc = "assets/img/map_big.jpg",
+            highResolutionImage = $(this).data('high-res-img');
+ 
+        viewer.show(imgSrc, highResolutionImage);
+    });
+});
+</script>
 </body>
 
 </html>
